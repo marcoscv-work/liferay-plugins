@@ -16,8 +16,9 @@ package com.liferay.ams.model;
 
 import aQute.bnd.annotation.ProviderType;
 
+import com.liferay.portal.kernel.annotation.ImplementationClassName;
+import com.liferay.portal.kernel.model.PersistedModel;
 import com.liferay.portal.kernel.util.Accessor;
-import com.liferay.portal.model.PersistedModel;
 
 /**
  * The extended model interface for the Asset service. Represents a row in the &quot;AMS_Asset&quot; database table, with each column mapped to a property of this class.
@@ -28,6 +29,7 @@ import com.liferay.portal.model.PersistedModel;
  * @see com.liferay.ams.model.impl.AssetModelImpl
  * @generated
  */
+@ImplementationClassName("com.liferay.ams.model.impl.AssetImpl")
 @ProviderType
 public interface Asset extends AssetModel, PersistedModel {
 	/*

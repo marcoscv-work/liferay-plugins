@@ -16,7 +16,7 @@ package com.liferay.ams.service;
 
 import aQute.bnd.annotation.ProviderType;
 
-import com.liferay.portal.service.ServiceWrapper;
+import com.liferay.portal.kernel.service.ServiceWrapper;
 
 /**
  * Provides a wrapper for {@link DefinitionLocalService}.
@@ -85,8 +85,8 @@ public class DefinitionLocalServiceWrapper implements DefinitionLocalService,
 	* @throws PortalException
 	*/
 	@Override
-	public com.liferay.portal.model.PersistedModel deletePersistedModel(
-		com.liferay.portal.model.PersistedModel persistedModel)
+	public com.liferay.portal.kernel.model.PersistedModel deletePersistedModel(
+		com.liferay.portal.kernel.model.PersistedModel persistedModel)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _definitionLocalService.deletePersistedModel(persistedModel);
 	}
@@ -242,7 +242,7 @@ public class DefinitionLocalServiceWrapper implements DefinitionLocalService,
 	}
 
 	@Override
-	public com.liferay.portal.model.PersistedModel getPersistedModel(
+	public com.liferay.portal.kernel.model.PersistedModel getPersistedModel(
 		java.io.Serializable primaryKeyObj)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _definitionLocalService.getPersistedModel(primaryKeyObj);
@@ -266,23 +266,6 @@ public class DefinitionLocalServiceWrapper implements DefinitionLocalService,
 	public com.liferay.ams.model.Definition updateDefinition(
 		com.liferay.ams.model.Definition definition) {
 		return _definitionLocalService.updateDefinition(definition);
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
-	 */
-	@Deprecated
-	public DefinitionLocalService getWrappedDefinitionLocalService() {
-		return _definitionLocalService;
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
-	 */
-	@Deprecated
-	public void setWrappedDefinitionLocalService(
-		DefinitionLocalService definitionLocalService) {
-		_definitionLocalService = definitionLocalService;
 	}
 
 	@Override

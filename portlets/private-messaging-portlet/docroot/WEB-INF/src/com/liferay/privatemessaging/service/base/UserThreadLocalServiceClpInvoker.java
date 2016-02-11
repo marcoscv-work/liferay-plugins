@@ -102,7 +102,7 @@ public class UserThreadLocalServiceClpInvoker {
 		_methodName15 = "deletePersistedModel";
 
 		_methodParameterTypes15 = new String[] {
-				"com.liferay.portal.model.PersistedModel"
+				"com.liferay.portal.kernel.model.PersistedModel"
 			};
 
 		_methodName16 = "getPersistedModel";
@@ -132,14 +132,14 @@ public class UserThreadLocalServiceClpInvoker {
 		_methodParameterTypes43 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
 				"java.lang.String", "java.util.List",
-				"com.liferay.portal.theme.ThemeDisplay"
+				"com.liferay.portal.kernel.theme.ThemeDisplay"
 			};
 
 		_methodName44 = "addPrivateMessageBranch";
 
 		_methodParameterTypes44 = new String[] {
 				"long", "long", "java.lang.String", "java.util.List",
-				"com.liferay.portal.theme.ThemeDisplay"
+				"com.liferay.portal.kernel.theme.ThemeDisplay"
 			};
 
 		_methodName45 = "addUserThread";
@@ -198,7 +198,9 @@ public class UserThreadLocalServiceClpInvoker {
 
 		_methodName58 = "updateUserName";
 
-		_methodParameterTypes58 = new String[] { "com.liferay.portal.model.User" };
+		_methodParameterTypes58 = new String[] {
+				"com.liferay.portal.kernel.model.User"
+			};
 	}
 
 	public Object invokeMethod(String name, String[] parameterTypes,
@@ -281,7 +283,7 @@ public class UserThreadLocalServiceClpInvoker {
 
 		if (_methodName15.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes15, parameterTypes)) {
-			return UserThreadLocalServiceUtil.deletePersistedModel((com.liferay.portal.model.PersistedModel)arguments[0]);
+			return UserThreadLocalServiceUtil.deletePersistedModel((com.liferay.portal.kernel.model.PersistedModel)arguments[0]);
 		}
 
 		if (_methodName16.equals(name) &&
@@ -317,7 +319,7 @@ public class UserThreadLocalServiceClpInvoker {
 				(java.lang.String)arguments[2], (java.lang.String)arguments[3],
 				(java.lang.String)arguments[4],
 				(java.util.List<com.liferay.portal.kernel.util.ObjectValuePair<java.lang.String, java.io.InputStream>>)arguments[5],
-				(com.liferay.portal.theme.ThemeDisplay)arguments[6]);
+				(com.liferay.portal.kernel.theme.ThemeDisplay)arguments[6]);
 		}
 
 		if (_methodName44.equals(name) &&
@@ -326,7 +328,7 @@ public class UserThreadLocalServiceClpInvoker {
 				((Long)arguments[1]).longValue(),
 				(java.lang.String)arguments[2],
 				(java.util.List<com.liferay.portal.kernel.util.ObjectValuePair<java.lang.String, java.io.InputStream>>)arguments[3],
-				(com.liferay.portal.theme.ThemeDisplay)arguments[4]);
+				(com.liferay.portal.kernel.theme.ThemeDisplay)arguments[4]);
 		}
 
 		if (_methodName45.equals(name) &&
@@ -424,7 +426,7 @@ public class UserThreadLocalServiceClpInvoker {
 
 		if (_methodName58.equals(name) &&
 				Arrays.deepEquals(_methodParameterTypes58, parameterTypes)) {
-			UserThreadLocalServiceUtil.updateUserName((com.liferay.portal.model.User)arguments[0]);
+			UserThreadLocalServiceUtil.updateUserName((com.liferay.portal.kernel.model.User)arguments[0]);
 
 			return null;
 		}

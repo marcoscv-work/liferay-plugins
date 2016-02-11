@@ -16,7 +16,7 @@ package com.liferay.akismet.service;
 
 import aQute.bnd.annotation.ProviderType;
 
-import com.liferay.portal.service.ServiceWrapper;
+import com.liferay.portal.kernel.service.ServiceWrapper;
 
 /**
  * Provides a wrapper for {@link AkismetDataLocalService}.
@@ -98,8 +98,8 @@ public class AkismetDataLocalServiceWrapper implements AkismetDataLocalService,
 	* @throws PortalException
 	*/
 	@Override
-	public com.liferay.portal.model.PersistedModel deletePersistedModel(
-		com.liferay.portal.model.PersistedModel persistedModel)
+	public com.liferay.portal.kernel.model.PersistedModel deletePersistedModel(
+		com.liferay.portal.kernel.model.PersistedModel persistedModel)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _akismetDataLocalService.deletePersistedModel(persistedModel);
 	}
@@ -263,7 +263,7 @@ public class AkismetDataLocalServiceWrapper implements AkismetDataLocalService,
 	}
 
 	@Override
-	public com.liferay.portal.model.PersistedModel getPersistedModel(
+	public com.liferay.portal.kernel.model.PersistedModel getPersistedModel(
 		java.io.Serializable primaryKeyObj)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _akismetDataLocalService.getPersistedModel(primaryKeyObj);
@@ -297,23 +297,6 @@ public class AkismetDataLocalServiceWrapper implements AkismetDataLocalService,
 		java.lang.String userURL) {
 		return _akismetDataLocalService.updateAkismetData(className, classPK,
 			type, permalink, referrer, userAgent, userIP, userURL);
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
-	 */
-	@Deprecated
-	public AkismetDataLocalService getWrappedAkismetDataLocalService() {
-		return _akismetDataLocalService;
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
-	 */
-	@Deprecated
-	public void setWrappedAkismetDataLocalService(
-		AkismetDataLocalService akismetDataLocalService) {
-		_akismetDataLocalService = akismetDataLocalService;
 	}
 
 	@Override
