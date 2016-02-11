@@ -18,10 +18,10 @@ import aQute.bnd.annotation.ProviderType;
 
 import com.liferay.ams.model.Type;
 
+import com.liferay.portal.kernel.model.CacheModel;
 import com.liferay.portal.kernel.util.HashUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
-import com.liferay.portal.model.CacheModel;
 
 import java.io.Externalizable;
 import java.io.IOException;
@@ -98,6 +98,7 @@ public class TypeCacheModel implements CacheModel<Type>, Externalizable {
 	@Override
 	public void readExternal(ObjectInput objectInput) throws IOException {
 		typeId = objectInput.readLong();
+
 		groupId = objectInput.readLong();
 		name = objectInput.readUTF();
 	}
@@ -106,6 +107,7 @@ public class TypeCacheModel implements CacheModel<Type>, Externalizable {
 	public void writeExternal(ObjectOutput objectOutput)
 		throws IOException {
 		objectOutput.writeLong(typeId);
+
 		objectOutput.writeLong(groupId);
 
 		if (name == null) {

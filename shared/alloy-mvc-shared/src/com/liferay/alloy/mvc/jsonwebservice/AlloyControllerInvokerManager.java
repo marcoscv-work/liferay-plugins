@@ -18,7 +18,9 @@ import com.liferay.alloy.mvc.AlloyController;
 import com.liferay.alloy.mvc.AlloyPortlet;
 import com.liferay.portal.kernel.json.JSONSerializable;
 import com.liferay.portal.kernel.jsonwebservice.JSONWebServiceActionsManagerUtil;
+import com.liferay.portal.kernel.model.Portlet;
 import com.liferay.portal.kernel.portlet.LiferayPortletConfig;
+import com.liferay.portal.kernel.theme.ThemeDisplay;
 import com.liferay.portal.kernel.util.CharPool;
 import com.liferay.portal.kernel.util.FileUtil;
 import com.liferay.portal.kernel.util.PropsKeys;
@@ -27,8 +29,6 @@ import com.liferay.portal.kernel.util.ReflectionUtil;
 import com.liferay.portal.kernel.util.StringBundler;
 import com.liferay.portal.kernel.util.StringPool;
 import com.liferay.portal.kernel.util.StringUtil;
-import com.liferay.portal.model.Portlet;
-import com.liferay.portal.theme.ThemeDisplay;
 
 import java.io.File;
 
@@ -139,8 +139,8 @@ public class AlloyControllerInvokerManager {
 	}
 
 	protected Class<? extends AlloyControllerInvoker>
-		createAlloyControllerInvokerClass(
-			Class<? extends AlloyController> controllerClass)
+			createAlloyControllerInvokerClass(
+				Class<? extends AlloyController> controllerClass)
 		throws NoClassNecessaryException {
 
 		ClassLoader classLoader = controllerClass.getClassLoader();

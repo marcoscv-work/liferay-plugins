@@ -16,7 +16,7 @@ package com.liferay.ams.service;
 
 import aQute.bnd.annotation.ProviderType;
 
-import com.liferay.portal.service.ServiceWrapper;
+import com.liferay.portal.kernel.service.ServiceWrapper;
 
 /**
  * Provides a wrapper for {@link TypeLocalService}.
@@ -58,8 +58,8 @@ public class TypeLocalServiceWrapper implements TypeLocalService,
 	* @throws PortalException
 	*/
 	@Override
-	public com.liferay.portal.model.PersistedModel deletePersistedModel(
-		com.liferay.portal.model.PersistedModel persistedModel)
+	public com.liferay.portal.kernel.model.PersistedModel deletePersistedModel(
+		com.liferay.portal.kernel.model.PersistedModel persistedModel)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _typeLocalService.deletePersistedModel(persistedModel);
 	}
@@ -199,7 +199,7 @@ public class TypeLocalServiceWrapper implements TypeLocalService,
 	}
 
 	@Override
-	public com.liferay.portal.model.PersistedModel getPersistedModel(
+	public com.liferay.portal.kernel.model.PersistedModel getPersistedModel(
 		java.io.Serializable primaryKeyObj)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _typeLocalService.getPersistedModel(primaryKeyObj);
@@ -262,22 +262,6 @@ public class TypeLocalServiceWrapper implements TypeLocalService,
 	public com.liferay.ams.model.Type updateType(
 		com.liferay.ams.model.Type type) {
 		return _typeLocalService.updateType(type);
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
-	 */
-	@Deprecated
-	public TypeLocalService getWrappedTypeLocalService() {
-		return _typeLocalService;
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
-	 */
-	@Deprecated
-	public void setWrappedTypeLocalService(TypeLocalService typeLocalService) {
-		_typeLocalService = typeLocalService;
 	}
 
 	@Override

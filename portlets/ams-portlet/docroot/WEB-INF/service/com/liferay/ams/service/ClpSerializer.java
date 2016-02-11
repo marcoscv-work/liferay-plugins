@@ -25,10 +25,10 @@ import com.liferay.portal.kernel.io.unsync.UnsyncByteArrayInputStream;
 import com.liferay.portal.kernel.io.unsync.UnsyncByteArrayOutputStream;
 import com.liferay.portal.kernel.log.Log;
 import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.model.BaseModel;
 import com.liferay.portal.kernel.util.ClassLoaderObjectInputStream;
 import com.liferay.portal.kernel.util.PropsUtil;
 import com.liferay.portal.kernel.util.Validator;
-import com.liferay.portal.model.BaseModel;
 
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -418,23 +418,25 @@ public class ClpSerializer {
 
 		String className = clazz.getName();
 
-		if (className.equals("com.liferay.ams.NoSuchAssetException")) {
-			return new com.liferay.ams.NoSuchAssetException(throwable.getMessage(),
+		if (className.equals("com.liferay.ams.exception.NoSuchAssetException")) {
+			return new com.liferay.ams.exception.NoSuchAssetException(throwable.getMessage(),
 				throwable.getCause());
 		}
 
-		if (className.equals("com.liferay.ams.NoSuchCheckoutException")) {
-			return new com.liferay.ams.NoSuchCheckoutException(throwable.getMessage(),
+		if (className.equals(
+					"com.liferay.ams.exception.NoSuchCheckoutException")) {
+			return new com.liferay.ams.exception.NoSuchCheckoutException(throwable.getMessage(),
 				throwable.getCause());
 		}
 
-		if (className.equals("com.liferay.ams.NoSuchDefinitionException")) {
-			return new com.liferay.ams.NoSuchDefinitionException(throwable.getMessage(),
+		if (className.equals(
+					"com.liferay.ams.exception.NoSuchDefinitionException")) {
+			return new com.liferay.ams.exception.NoSuchDefinitionException(throwable.getMessage(),
 				throwable.getCause());
 		}
 
-		if (className.equals("com.liferay.ams.NoSuchTypeException")) {
-			return new com.liferay.ams.NoSuchTypeException(throwable.getMessage(),
+		if (className.equals("com.liferay.ams.exception.NoSuchTypeException")) {
+			return new com.liferay.ams.exception.NoSuchTypeException(throwable.getMessage(),
 				throwable.getCause());
 		}
 

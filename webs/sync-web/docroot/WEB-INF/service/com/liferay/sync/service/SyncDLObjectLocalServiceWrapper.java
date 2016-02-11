@@ -16,7 +16,7 @@ package com.liferay.sync.service;
 
 import aQute.bnd.annotation.ProviderType;
 
-import com.liferay.portal.service.ServiceWrapper;
+import com.liferay.portal.kernel.service.ServiceWrapper;
 
 /**
  * Provides a wrapper for {@link SyncDLObjectLocalService}.
@@ -81,8 +81,8 @@ public class SyncDLObjectLocalServiceWrapper implements SyncDLObjectLocalService
 	* @throws PortalException
 	*/
 	@Override
-	public com.liferay.portal.model.PersistedModel deletePersistedModel(
-		com.liferay.portal.model.PersistedModel persistedModel)
+	public com.liferay.portal.kernel.model.PersistedModel deletePersistedModel(
+		com.liferay.portal.kernel.model.PersistedModel persistedModel)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _syncDLObjectLocalService.deletePersistedModel(persistedModel);
 	}
@@ -242,7 +242,7 @@ public class SyncDLObjectLocalServiceWrapper implements SyncDLObjectLocalService
 	}
 
 	@Override
-	public com.liferay.portal.model.PersistedModel getPersistedModel(
+	public com.liferay.portal.kernel.model.PersistedModel getPersistedModel(
 		java.io.Serializable primaryKeyObj)
 		throws com.liferay.portal.kernel.exception.PortalException {
 		return _syncDLObjectLocalService.getPersistedModel(primaryKeyObj);
@@ -304,6 +304,27 @@ public class SyncDLObjectLocalServiceWrapper implements SyncDLObjectLocalService
 			arguments);
 	}
 
+	@Override
+	public void moveDependentSyncDLObjects(
+		com.liferay.sync.model.SyncDLObject parentSyncDLObject)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		_syncDLObjectLocalService.moveDependentSyncDLObjects(parentSyncDLObject);
+	}
+
+	@Override
+	public void restoreDependentSyncDLObjects(
+		com.liferay.sync.model.SyncDLObject parentSyncDLObject)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		_syncDLObjectLocalService.restoreDependentSyncDLObjects(parentSyncDLObject);
+	}
+
+	@Override
+	public void trashDependentSyncDLObjects(
+		com.liferay.sync.model.SyncDLObject parentSyncDLObject)
+		throws com.liferay.portal.kernel.exception.PortalException {
+		_syncDLObjectLocalService.trashDependentSyncDLObjects(parentSyncDLObject);
+	}
+
 	/**
 	* Updates the sync d l object in the database or adds it if it does not yet exist. Also notifies the appropriate model listeners.
 	*
@@ -314,23 +335,6 @@ public class SyncDLObjectLocalServiceWrapper implements SyncDLObjectLocalService
 	public com.liferay.sync.model.SyncDLObject updateSyncDLObject(
 		com.liferay.sync.model.SyncDLObject syncDLObject) {
 		return _syncDLObjectLocalService.updateSyncDLObject(syncDLObject);
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedService}
-	 */
-	@Deprecated
-	public SyncDLObjectLocalService getWrappedSyncDLObjectLocalService() {
-		return _syncDLObjectLocalService;
-	}
-
-	/**
-	 * @deprecated As of 6.1.0, replaced by {@link #setWrappedService}
-	 */
-	@Deprecated
-	public void setWrappedSyncDLObjectLocalService(
-		SyncDLObjectLocalService syncDLObjectLocalService) {
-		_syncDLObjectLocalService = syncDLObjectLocalService;
 	}
 
 	@Override
